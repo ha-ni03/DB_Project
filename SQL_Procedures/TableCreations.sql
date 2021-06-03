@@ -8,7 +8,7 @@ CREATE TABLE `userinfo` (
   PRIMARY KEY (`UserName`)
 );
 
-create table `ticket_info` (
+CREATE TABLE `ticket_info` (
   `ticket_id` int NOT NULL AUTO_INCREMENT,
   `ticket_name` varchar(20) NOT NULL,
   `ticket_description` varchar(45) NOT NULL,
@@ -18,12 +18,12 @@ create table `ticket_info` (
   `ticket_type` ENUM ('SERVICE','PURCHASE')DEFAULT 'SERVICE',
   `tktstatus` ENUM ('NEW', 'RUNNING', 'RESOLVED'),
   `ItemId`INT DEFAULT 0,
-  `Quantity`INT DEFAULT 0,
+  `Quantity`INT DEFAULT 1,
   PRIMARY KEY (`ticket_id`)
 );
 
 /* History is optional*/
-Create table `history`(
+CREATE TABLE `histories`(
 `Id` int NOT NULL AUTO_INCREMENT,  /* dont take the id from tickt_info*/
 `ticket_name` varchar(20) NOT NULL,
 `ticket_description` varchar(45) NOT NULL,
@@ -59,7 +59,7 @@ CREATE TABLE `PurchaseCart` (
 
 CREATE TABLE `Catalog` (
   `ItemId` INT NOT NULL AUTO_INCREMENT,
-  `Itemname` varchar(10) NOT NULL,  /* Eg: Laptop */
+  `Itemname` varchar(25) NOT NULL,  /* Eg: Laptop */
   PRIMARY KEY (`ItemId`)
 );
 

@@ -1,11 +1,10 @@
 /* Cleanup all tables in Database*/
-drop table `userinfo`;
+drop table IF EXISTS `userinfo`;
  /* drop child tables first */
-drop table `notifications`; 
-drop table `catalog`;
-drop table `PurchaseCart`;
+drop table IF EXISTS`notifications`; 
+drop table IF EXISTS`PurchaseCart`;
 /* and then the parent table */
-drop table `ticket_info`;
-drop table `history`;
-drop table `Catalog`;
+drop table IF EXISTS`ticket_info`;
+drop table IF EXISTS`histories`;
+drop table IF EXISTS`Catalog`;
    
